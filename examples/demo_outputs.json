@@ -1,0 +1,87 @@
+[
+  {
+    "query": "What is your refund policy?",
+    "response": {
+      "route": "KNOWLEDGE_BASE",
+      "confidence": 0.84,
+      "used_sources": [
+        "refund_policy.md",
+        "account_upgrade.md"
+      ],
+      "used_tools": [
+        "knowledge_retrieval"
+      ],
+      "needs_clarification": false,
+      "final_answer": "Monthly plans can be refunded within 14 calendar days if standard usage thresholds were not exceeded. Annual plans are only partially refundable within 7 days, and no refunds are available once custom onboarding has been delivered. Refund requests must be submitted via billing support in the dashboard, and approved refunds usually take 5\u20137 business days."
+    }
+  },
+  {
+    "query": "Who is assigned to T-2003?",
+    "response": {
+      "route": "TICKET_LOOKUP",
+      "confidence": 0.93,
+      "used_sources": [
+        "tickets.json"
+      ],
+      "used_tools": [
+        "ticket_lookup"
+      ],
+      "needs_clarification": false,
+      "final_answer": "Ticket T-2003 is currently unassigned."
+    }
+  },
+  {
+    "query": "When does Acme Corp renew?",
+    "response": {
+      "route": "ACCOUNT_LOOKUP",
+      "confidence": 0.88,
+      "used_sources": [
+        "accounts.json"
+      ],
+      "used_tools": [
+        "account_lookup"
+      ],
+      "needs_clarification": false,
+      "final_answer": "Acme Corp renews on 2026-06-15."
+    }
+  },
+  {
+    "query": "Check that ticket for me",
+    "response": {
+      "route": "AMBIGUOUS",
+      "confidence": 0.63,
+      "used_sources": [],
+      "used_tools": [],
+      "needs_clarification": true,
+      "final_answer": "Can you clarify which ticket, customer, or policy topic you want me to check?"
+    }
+  },
+  {
+    "query": "Are you HIPAA compliant?",
+    "response": {
+      "route": "UNSUPPORTED",
+      "confidence": 0.85,
+      "used_sources": [],
+      "used_tools": [],
+      "needs_clarification": false,
+      "final_answer": "I could not find this information in the provided knowledge documents, ticket data, or account data."
+    }
+  },
+  {
+    "query": "Which issues should the support team handle first today?",
+    "response": {
+      "route": "TICKET_LOOKUP",
+      "confidence": 0.9,
+      "used_sources": [
+        "tickets.json",
+        "accounts.json"
+      ],
+      "used_tools": [
+        "ticket_lookup",
+        "triage_engine"
+      ],
+      "needs_clarification": false,
+      "final_answer": "Highest-priority issues for today:\n1. T-2004 (Orbit Health) \u2014 score 19.5: priority=urgent, status=open, age=24d, tier=enterprise, health=35, open_account_tickets=4. Latest issue: SSO login failing for several users.\n2. T-2008 (Orbit Health) \u2014 score 19.5: priority=urgent, status=open, age=24d, tier=enterprise, health=35, open_account_tickets=4. Latest issue: System outage affecting login.\n3. T-2012 (Helios Power) \u2014 score 19.0: priority=urgent, status=open, age=25d, tier=enterprise, health=38, open_account_tickets=3. Latest issue: API returning 500 errors in production.\n4. T-2001 (Acme Corp) \u2014 score 18.0: priority=urgent, status=open, age=25d, tier=enterprise, health=42, open_account_tickets=3. Latest issue: Payment gateway failing in production checkout.\n5. T-2014 (Orbit Health) \u2014 score 17.5: priority=high, status=in_progress, age=26d, tier=enterprise, health=35, open_account_tickets=4. Latest issue: Login errors after SSO update."
+    }
+  }
+]
