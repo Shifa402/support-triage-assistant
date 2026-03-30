@@ -76,7 +76,7 @@ The ranking combines:
 ### Option A: Run directly with Python
 
 ```bash
-cd support_triage_assistant
+cd support-triage-assistant
 python -m src.support_triage.cli "What is your refund policy?" --pretty
 ```
 
